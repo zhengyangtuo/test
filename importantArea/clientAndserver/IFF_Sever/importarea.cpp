@@ -11,7 +11,7 @@ importantAreaId.append(10);
 }
 
 QDataStream& operator>>(QDataStream &inStream,importArea &msg){
-    //测试直接对类输出出现问题
+    //将重点区域异常的信息写入变量中
     quint16 type;
     inStream>>type;
     msg.setMessageType(type);
@@ -26,13 +26,18 @@ QDataStream& operator>>(QDataStream &inStream,importArea &msg){
 }
 
 QDataStream& operator<<(QDataStream &outStream,const importArea &msg){
+    //将重点区域异常的信息写入流中
     outStream<<msg.type;
+
     outStream<<msg.importantAreaNum;
+
     outStream<<msg.importantAreaId;
+
     return outStream;
 }
 
 quint16 importArea::getImportantAreaNum(){
+
     return importantAreaNum;
 
 }

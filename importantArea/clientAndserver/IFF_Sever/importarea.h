@@ -66,19 +66,39 @@ public:
     QVector<quint16> getImportantAreaId();
     /*
      * 函数功能:为类中变量importantAreaId赋值
+     * 调用表:无
+     * 被调用表:重载输入运算符的函数中
+     * 输入参数:存储重点区域id的数组
+     * 输出参数:无
+     * 返回值:无
     */
     void setImportantAreaId(const QVector<quint16> id);
-
+    /*
+     * 函数功能:获取信息的类型
+     * 调用表:无
+     * 被调用表:重载输出运算符中
+     * 输入参数:无
+     * 输出参数:无
+     * 返回值:无
+    */
     quint16 getMessageType();
-
+    /*
+     * 函数功能:为类中变量type赋值
+     * 调用表:无
+     * 被调用表:重载输入运算符
+     * 输入参数:信息的类型
+     * 输出参数:无
+     * 返回值:无
+    */
     void setMessageType(quint16 value);
 
 
 private:
-    quint16 type;
+    quint16 type;//信息的类型
 
-    quint16 importantAreaNum;
-    QVector<quint16> importantAreaId;
+    quint16 importantAreaNum;//重点区域的数目
+
+    QVector<quint16> importantAreaId;//重点区域的id
 };
 
 #endif // IMPORTAREA_H

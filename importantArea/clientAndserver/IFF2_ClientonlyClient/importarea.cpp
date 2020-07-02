@@ -1,5 +1,6 @@
 ﻿#include "importarea.h"
 #include<QVector>
+#include<QDataStream>
 importArea::importArea()
 {
 //测试
@@ -10,7 +11,7 @@ importantAreaId.append(10);
 }
 
 QDataStream& operator>>(QDataStream &inStream,importArea &msg){
-    //测试直接对类输出出现问题
+    //将重点区域异常的信息写入变量中
     quint16 type;
     inStream>>type;
     msg.setMessageType(type);
@@ -21,19 +22,22 @@ QDataStream& operator>>(QDataStream &inStream,importArea &msg){
     inStream>>id;
     msg.setImportantAreaId(id);
 
-
     return inStream;
-
 }
 
 QDataStream& operator<<(QDataStream &outStream,const importArea &msg){
+    //将重点区域异常的信息写入流中
     outStream<<msg.type;
+
     outStream<<msg.importantAreaNum;
+
     outStream<<msg.importantAreaId;
+
     return outStream;
 }
 
 quint16 importArea::getImportantAreaNum(){
+
     return importantAreaNum;
 
 }
@@ -45,18 +49,15 @@ QVector<quint16> importArea::getImportantAreaId(){
     return importantAreaId;
 
 }
-void importArea::setImportantAreaId(QVector<quint16> id){
-//下面的添加不会对之前的数据删除
-//    for(const auto &i:id){
-//        importantAreaId.append(i);
-//    }
+void importArea::setImportantAreaId(const QVector<quint16> id){
     importantAreaId=id;
 
 }
-
 quint16 importArea::getMessageType(){
     return type;
 }
 void importArea::setMessageType(quint16 value){
     type=value;
 }
+
+

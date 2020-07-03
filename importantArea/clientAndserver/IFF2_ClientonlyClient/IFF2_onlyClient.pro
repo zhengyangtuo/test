@@ -46,7 +46,10 @@ SOURCES += \
     criticalareaclient.cpp \
     criticalareamanagerclient.cpp \
     alarmdeviceclient.cpp \
-    criticalarea.cpp
+    criticalarea.cpp \
+    criticalareamanager.cpp \
+    inspectresult.cpp \
+    alarmdevice.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -73,7 +76,10 @@ HEADERS += \
     criticalareaclient.h \
     criticalareamanagerclient.h \
     alarmdeviceclient.h \
-    criticalarea.h
+    criticalarea.h \
+    criticalareamanager.h \
+    inspectresult.h \
+    alarmdevice.h
 
 FORMS += \
         mainwindow.ui

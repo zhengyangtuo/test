@@ -84,22 +84,33 @@ void MainWindow::ReceiveMsg(const QByteArray &Msg){
     //反序列化
     inStream>>area;
     //将反序列化后的信息显示在空白行
-    ui->textEdit->append("importantAreaType:"+QString::number(area.getMessageType()));
-    ui->textEdit->append("importantAreaNum:"+QString::number(area.getImportantAreaNum()));
-    for(const auto&i:area.getImportantAreaId()){
-        ui->textEdit->append("importAreaID:"+QString::number(i));
-    }
-    //提取出序列化信息的类型
-//    quint16 type;
-//    inStream>>type;
-//    ui->textEdit->append("messageType:"+QString::number(type));
-//    qDebug()<<type;
-//    //根据类型交给不同的处理函数
-//    switch (type) {
-//    case messageType::importantAreaError:
-//        dealImportAreaError(inStream);
-//        break;
+//    ui->textEdit->append("importantAreaType:"+QString::number(area.getMessageType()));
+//    ui->textEdit->append("importantAreaNum:"+QString::number(area.getImportantAreaNum()));
+//    for(const auto&i:area.getImportantAreaId()){
+//        ui->textEdit->append("importAreaID:"+QString::number(i));
 //    }
+//    提取出序列化信息的类型
+    quint16 type;
+    inStream>>type;
+    ui->textEdit->append("messageType:"+QString::number(type));
+    qDebug()<<type;
+    //根据类型交给不同的处理函数
+    switch (type) {
+    case messageType::importantAreaError:
+        DealImportAreaError(inStream);
+        break;
+    case messageType::createImportantArea:
+        //TODO(郑鑫尧):处理创建重点区域的函数
+        break;
+    case messageType::updateImportantArea:
+        //TODO()
+        break;
+    case messageType::deleteImportantArea:
+
+        break;
+    default:
+        break;
+    }
 
 }
 
@@ -122,3 +133,19 @@ void MainWindow::DealImportAreaError(QDataStream &inStream){
         ui->textEdit->append("importAreaID:"+QString::number(i));
     }
 }
+
+void MainWindow::DealNewImportantAreaMsg(QDataStream &inStream)
+{
+
+}
+
+void MainWindow::DealUpdateImportantAreaMsg(QDataStream &inStream)
+{
+
+}
+
+void MainWindow::DealDeleteImportantAreaMsg(QDataStream &inStream)
+{
+
+}
+

@@ -39,6 +39,34 @@ public:
     */
     void DealImportAreaError(QDataStream &inStream);
     /*
+     * 函数功能:反序列化新建重点区域信息，并在态势图上完成新的重点区域的显示
+     * 调用表:
+     * 被调用表:ReceiveMsg()函数中有调用
+     * 输入参数:输入除去报文类型后的序列化新建重点区域的信息
+     * 输出参数:无
+     * 返回值:无
+    */
+    void DealNewImportantAreaMsg(QDataStream &inStream);
+    /*
+     * 函数功能:反序列化更新重点区域信息，并在态势图上完成对应重点区域信息更新
+     * 调用表:
+     * 被调用表:ReceiveMsg()函数中有调用
+     * 输入参数:输入除去报文类型后的序列化更新重点区域的信息
+     * 输出参数:无
+     * 输入参数:无
+     * 返回值:无
+    */
+    void DealUpdateImportantAreaMsg(QDataStream &inStream);
+    /*
+     * 函数功能:反序列化删除重点区域信息，并在态势图上完成相应重点区域的移除
+     * 调用表:
+     * 被调用表:ReceiveMsg()函数中有调用
+     * 输入参数:输入除去报文类型后的序列化删除重点区域的信息
+     * 输出参数:无
+     * 返回值:无
+    */
+    void DealDeleteImportantAreaMsg(QDataStream &inStream);
+    /*
      * 函数功能:绑定信号与槽
      * 调用表:无
      * 被调用表:被本类的构造函数调用

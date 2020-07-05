@@ -13,16 +13,48 @@
 #include<QGridLayout>
 #include<QVBoxLayout>
 #include<QColorDialog>
-class ImportantArea : public QWidget
+
+/* *
+ * 类说明:本类主要针对重点区域信息的UI界面的tabWidget中每一个tab设置的控件，用于在新建区域时在
+ * 界面上显示与之前相同的重点区域信息的UI界面。
+ * 使用实例:
+ * auto *w=new ImportantArea(this);//声明该类对象
+ * tabWidget->insertTab(index,w,str); //向标签页中index位置上插入标题为str的ImportantArea类对象
+* */
+class ImportantAreaMsgTab : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ImportantArea(QWidget *parent = nullptr);
-    void setupUI();//对控件的初始化
+    /*
+     * 函数功能:构造函数，对新建区域的tab控件进行初始化
+     * 调用表:调用SetUpUi函数
+     * 输入参数:父指针
+     * 输出参数:无
+     * 返回值:无
+    */
+    explicit ImportantAreaMsgTab(QWidget *parent = nullptr);
+    /*
+     * 函数功能:对类中的变量分配空间，且对设置布局
+     * 调用表:无
+     * 被调用表:被构造函数调用
+     * 输入参数:无
+     * 输出参数:无
+     * 返回值:无
+    */
+    void SetUpUi();//对控件的初始化
 signals:
 
 public slots:
-    void showColors();
+    /*
+     * 函数功能:点击选择颜色按钮后出现颜色选择框选择颜色，并将颜色显示在按钮的背景色
+     * 绑定表:与该槽函数绑定的是按钮的clicked()信号，connect函数在构造函数中
+     * 调用表:无
+     * 被调用表:自动生成
+     * 输入参数:无
+     * 输出参数:无
+     * 返回值:无
+    */
+    void ShowColors();//显示选择颜色
 
 private:
     QCheckBox *statusChangeBtn;//区域有效性切换按钮

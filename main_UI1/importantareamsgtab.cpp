@@ -1,4 +1,4 @@
-﻿#include "importantarea.h"
+﻿#include "importantareamsgtab.h"
 #include<QWidget>
 #include<QGroupBox>
 #include<QLabel>
@@ -7,13 +7,13 @@
 #include<QPushButton>
 #include<QTextEdit>
 #include<QCheckBox>
-ImportantArea::ImportantArea(QWidget *parent) : QWidget(parent)
+ImportantAreaMsgTab::ImportantAreaMsgTab(QWidget *parent) : QWidget(parent)
 {
-setupUI();
+SetUpUi();
 
 }
-void ImportantArea::setupUI(){
-
+void ImportantAreaMsgTab::SetUpUi(){
+    //为类中的变量分配空间
     targetAttribute=new QGroupBox(QStringLiteral("目标属性"),this);
     flightStatus=new QGroupBox(QStringLiteral("飞行状态"),this);
     areaAttribute=new QGroupBox(QStringLiteral("区域属性"),this);
@@ -38,6 +38,7 @@ void ImportantArea::setupUI(){
     backgroundColor=new QLabel(QStringLiteral("背景色"),areaAttribute);
     selectColorBtn=new QPushButton(QStringLiteral("选色按钮"),areaAttribute);
     remarkTextEdit=new QTextEdit(remark);
+
     //目标属性水平布局的添加
     targetAttributeHBox=new QHBoxLayout(this);
     targetAttributeHBox->addWidget(flightType,1);
@@ -83,11 +84,12 @@ void ImportantArea::setupUI(){
     importAreaInfoVBox->addWidget(areaAttribute);
     importAreaInfoVBox->addWidget(remark);
     importAreaInfoVBox->addWidget(normalOrError);
+
     //颜色选择按钮与showColors()绑定
-    connect(selectColorBtn,&QPushButton::clicked,this,&ImportantArea::showColors);
+    connect(selectColorBtn,&QPushButton::clicked,this,&ImportantAreaMsgTab::ShowColors);
 
 }
-void ImportantArea::showColors(){
+void ImportantAreaMsgTab::ShowColors(){
     QColor c=QColorDialog::getColor(Qt::blue);
     QString btn_color=tr("QPushButton{background-color:rgb(%1,%2,%3)}").arg(c.red()).arg(c.green()).arg(c.blue());
     selectColorBtn->setStyleSheet(btn_color);

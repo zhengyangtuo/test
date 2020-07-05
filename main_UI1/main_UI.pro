@@ -26,12 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    importantarea.cpp
+    importantareamsgtab.cpp \
+    importantareamainui.cpp
 
 HEADERS += \
-        mainwindow.h \
-    importantarea.h
+    importantareamsgtab.h \
+    importantareamainui.h
 
 FORMS += \
         mainwindow.ui

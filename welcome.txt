@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+=======
+hello,i'm welcome.txt
+hello ,too!
+asdasdas
+你好，世世界
+>>>>>>> team

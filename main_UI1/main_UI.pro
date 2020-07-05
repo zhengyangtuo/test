@@ -34,7 +34,7 @@ HEADERS += \
     importantareamainui.h
 
 FORMS += \
-        mainwindow.ui
+    importantareamainui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

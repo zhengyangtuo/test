@@ -1,5 +1,5 @@
 ﻿#include "importantareamainui.h"
-#include "ui_mainwindow.h"
+#include "ui_importantareamainui.h"
 #include"importantareamsgtab.h"
 #include<QStringList>
 #include<QColor>
@@ -16,7 +16,7 @@
 #include<QMessageBox>
 ImportantAreaMainUi::ImportantAreaMainUi(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::ImportantAreaMainUi)
 {
 
     ui->setupUi(this);

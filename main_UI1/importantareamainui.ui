@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>ImportantAreaMainUi</class>
+ <widget class="QMainWindow" name="ImportantAreaMainUi">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -157,46 +157,8 @@ background:rgb(53, 255, 70)
    </property>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionRectangle">
-   <property name="icon">
-    <iconset resource="image.qrc">
-     <normaloff>:/icon/rectangle.png</normaloff>:/icon/rectangle.png</iconset>
-   </property>
-   <property name="text">
-    <string>矩形</string>
-   </property>
-   <property name="toolTip">
-    <string>画矩形</string>
-   </property>
-  </action>
-  <action name="actionRound">
-   <property name="icon">
-    <iconset resource="image.qrc">
-     <normaloff>:/icon/round.png</normaloff>:/icon/round.png</iconset>
-   </property>
-   <property name="text">
-    <string>圆形</string>
-   </property>
-   <property name="toolTip">
-    <string>画圆形</string>
-   </property>
-  </action>
-  <action name="actionEllipse">
-   <property name="icon">
-    <iconset resource="image.qrc">
-     <normaloff>:/icon/ellipse.png</normaloff>:/icon/ellipse.png</iconset>
-   </property>
-   <property name="text">
-    <string>椭圆</string>
-   </property>
-   <property name="toolTip">
-    <string>画椭圆</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="image.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

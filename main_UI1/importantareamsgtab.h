@@ -1,5 +1,5 @@
-﻿#ifndef IMPORTANTAREA_H
-#define IMPORTANTAREA_H
+﻿#ifndef IMPORTANTAREAMSGTAB_H
+#define IMPORTANTAREAMSGTAB_H
 
 #include <QWidget>
 #include<QGroupBox>
@@ -115,4 +115,4 @@ private:
 
 };
 
-#endif // IMPORTANTAREA_H
+#endif // IMPORTANTAREAMSGTAB_H

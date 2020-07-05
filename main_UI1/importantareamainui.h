@@ -1,5 +1,5 @@
-﻿#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+﻿#ifndef IMPORTANTAREAMAINUI_H
+#define IMPORTANTAREAMAINUI_H
 
 #include <QMainWindow>
 #include<QPushButton>
@@ -12,9 +12,14 @@
 #include<QToolBar>
 #include<QIcon>
 namespace Ui {
-class MainWindow;
+class ImportantAreaMainUi;
 }
-
+/* *
+ * 类说明:该类是重点区域主界面的类，初始化重点区域主界面，有新建区域，更改区域的状态以及区域信息，修改标题等功能
+ * 使用实例:
+ * ImportantAreaMainUi w;
+ * w.show();
+* */
 class ImportantAreaMainUi : public QMainWindow
 {
     Q_OBJECT
@@ -109,7 +114,7 @@ private slots:
     void on_tabWidget_tabCloseRequested(int index);//关闭标签页
 
 private:
-    Ui::MainWindow *ui;
+    Ui::ImportantAreaMainUi *ui;
 
     QPushButton *colorbtn;//第一个界面的颜色按钮
 
